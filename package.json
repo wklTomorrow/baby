@@ -1,0 +1,22 @@
+{
+  "name": "baby-growth-tracker",
+  "version": "1.0.0",
+  "description": "成长时光盒 - 宝宝成长记录小程序",
+  "main": "app.js",
+  "scripts": {
+    "install:cloud": "for dir in ./cloudfunctions/*; do if [ -d \"$dir\" ]; then echo \"Installing dependencies for $(basename $dir)\"; cd \"$dir\" && pnpm i; cd - > /dev/null; fi; done",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": [
+    "wechat",
+    "miniprogram",
+    "baby",
+    "growth",
+    "tracker"
+  ],
+  "author": "AI Generated",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

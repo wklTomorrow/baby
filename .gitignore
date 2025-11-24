@@ -1,0 +1,56 @@
+# 依赖管理文件
+node_modules/
+.pnpm-store/
+package-lock.json
+yarn.lock
+
+# 微信开发工具生成的文件
+*.sublime-project
+*.sublime-workspace
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 编译后的文件
+dist/
+build/
+miniprogram_npm/
+
+# 本地缓存和日志
+logs/
+*.log
+.cache/
+
+# 运行时生成的文件
+.tmp/
+.temp/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 临时文件和环境变量文件
+.env
+.env.*
+!.env.example
+
+# 微信小程序特有文件
+project.private.config.json
+
+# 云函数相关的忽略规则
+cloudfunctions/*/node_modules/
+cloudfunctions/*/package-lock.json
+cloudfunctions/*/pnpm-lock.yaml
+cloudfunctions/*/yarn.lock
+
+# 其他临时文件
+*.bak
+*.backup
+*.tmp
+*.temp
+.cache
+.history
+.settings/
