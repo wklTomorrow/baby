@@ -1,0 +1,64 @@
+<!--pages/record-list/record-list.wxml-->
+<view class="container">
+  <!-- 筛选标签 -->
+  <view class="filter-container">
+    <view 
+      class="filter-tag {{currentFilter === item.type ? 'active' : ''}}"
+      wx:for="{{filters}}"
+      wx:key="type"
+      bindtap="onFilterTap"
+      data-type="{{item.type}}"
+    >
+      {{item.label}}
+    </view>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="records-list" wx:if="{{groupedRecords.length > 0}}">
+    <view class="date-group" wx:for="{{groupedRecords}}" wx:key="date">
+      <view class="date-header">
+        <text class="icon">📅</text>
+        <text>{{item.dateText}}</text>
+      </view>
+      <view 
+        class="record-item card"
+        wx:for="{{item.records}}"
+        wx:key="id"
+        bindtap="viewRecord"
+        data-id="{{item.id}}"
+      >
+        <view class="record-thumbnail" wx:if="{{item.thumbnail}}">
+          <image class="thumbnail" src="{{item.thumbnail}}" mode="aspectFill"></image>
+        </view>
+        <view class="record-content">
+          <view class="record-text" wx:if="{{item.text}}">{{item.text}}</view>
+          <view class="record-meta">
+            <text class="time">{{item.time}}</text>
+            <view class="record-tags" wx:if="{{item.tags && item.tags.length > 0}}">
+              <text class="tag" wx:for="{{item.tags}}" wx:key="index" wx:for-item="tag">{{tag}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="record-type-icon">
+          <text wx:if="{{item.photos && item.photos.length > 0}}">📷</text>
+          <text wx:if="{{item.video}}">🎥</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:else>
+    <text class="empty-state-icon">📝</text>
+    <text class="empty-state-text">{{babyId ? '该宝宝还没有记录哦~' : '还没有记录哦~'}}</text>
+    <button class="btn-primary" bindtap="addRecord" wx:if="{{!babyId}}">添加第一条记录</button>
+  </view>
+  
+  <!-- 底部浮动添加按钮 -->
+  <view class="add-btn-container" wx:if="{{!babyId}}">
+    <view class="add-btn" bindtap="addRecord">
+      <text class="add-btn-icon">+</text>
+    </view>
+  </view>
+</view>
+

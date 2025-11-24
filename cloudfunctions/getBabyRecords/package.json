@@ -1,0 +1,14 @@
+{
+  "name": "getBabyRecords",
+  "version": "1.0.0",
+  "description": "根据babyId查询宝宝的所有记录",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.4.0"
+  }
+}

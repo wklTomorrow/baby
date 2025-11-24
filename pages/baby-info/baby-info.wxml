@@ -1,0 +1,53 @@
+<!--pages/baby-info/baby-info.wxml-->
+<view class="container">
+  <!-- 头像 -->
+  <view class="section card">
+    <view class="section-title">宝宝头像</view>
+    <view class="avatar-container" bindtap="chooseAvatar">
+      <image class="avatar" src="{{babyInfo.avatar || ''}}" mode="aspectFill"></image>
+      <view class="change-avatar-btn">
+        <text>更换头像</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 昵称 -->
+  <view class="section card">
+    <view class="section-title">宝宝昵称</view>
+    <input 
+      class="input" 
+      type="text" 
+      placeholder="请输入宝宝昵称"
+      value="{{babyInfo.nickname}}"
+      bindinput="onNicknameInput"
+      maxlength="20"
+    />
+  </view>
+
+  <!-- 出生日期 -->
+  <view class="section card">
+    <view class="section-title">出生日期</view>
+    <picker 
+      mode="date" 
+      value="{{babyInfo.birthday}}"
+      start="2010-01-01"
+      end="{{maxDate}}"
+      bindchange="onBirthdayChange"
+    >
+      <view class="picker">
+        <text wx:if="{{babyInfo.birthday}}">{{babyInfo.birthday}}</text>
+        <text wx:else class="placeholder">请选择出生日期</text>
+        <text class="arrow">›</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="save-btn-container safe-area-bottom">
+    <button class="save-btn btn-primary" bindtap="saveBabyInfo" disabled="{{saving}}">
+      <text wx:if="{{saving}}">保存中...</text>
+      <text wx:else>保存</text>
+    </button>
+  </view>
+</view>
+

@@ -1,0 +1,74 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 顶部导航栏 -->
+  <view class="header">
+    <text class="title">成长时光盒</text>
+    <view class="settings-btn" bindtap="goToProfile">
+      <text class="icon">⚙️</text>
+    </view>
+  </view>
+
+  <!-- 日历卡片 -->
+  <view class="calendar-card card">
+    <!-- 月份切换 -->
+    <view class="month-header">
+      <view class="month-btn" bindtap="prevMonth">
+        <text class="icon">‹</text>
+      </view>
+      <text class="month-text">{{currentYear}}年{{currentMonth}}月</text>
+      <view class="month-btn" bindtap="nextMonth">
+        <text class="icon">›</text>
+      </view>
+    </view>
+
+    <!-- 星期标题 -->
+    <view class="weekdays">
+      <view class="weekday" wx:for="{{weekdays}}" wx:key="index">{{item}}</view>
+    </view>
+
+    <!-- 日期网格 -->
+    <view class="days-grid">
+      <view 
+        class="day-item {{item.isToday ? 'today' : ''}} {{item.isCurrentMonth ? '' : 'other-month'}} {{item.hasRecord ? 'has-record' : ''}}"
+        wx:for="{{calendarDays}}" 
+        wx:key="date"
+        bindtap="onDayTap"
+        data-date="{{item.date}}"
+      >
+        <text class="day-number">{{item.day}}</text>
+        <view class="record-dot" wx:if="{{item.hasRecord}}"></view>
+      </view>
+    </view>
+
+    <!-- 回到今天按钮 -->
+    <view class="today-btn" bindtap="goToToday">
+      <text>回到今天</text>
+    </view>
+  </view>
+
+  <!-- 今日信息 -->
+  <view class="today-info card">
+    <view class="today-header">
+      <text class="icon">📅</text>
+      <text class="today-text">今天：{{todayDateText}}</text>
+    </view>
+    <view class="today-records" wx:if="{{todayRecords.length > 0}}">
+      <text class="record-count">已有 {{todayRecords.length}} 条记录</text>
+      <view class="view-records-btn" bindtap="viewTodayRecords">
+        <text>查看今日记录</text>
+      </view>
+    </view>
+    <view class="today-records" wx:else>
+      <text class="empty-tip">今天还没有记录哦~</text>
+    </view>
+  </view>
+
+  <!-- 快速添加按钮 -->
+  <view class="add-btn-container safe-area-bottom">
+    <button class="add-btn btn-primary" bindtap="addRecord" hover-class="btn-hover">
+      <text class="icon">📸</text>
+      <text>添加今日记录</text>
+    </button>
+  </view>
+</view>
+

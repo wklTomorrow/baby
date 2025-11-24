@@ -1,0 +1,93 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 宝宝信息 -->
+  <view class="baby-info card">
+    <view class="avatar-container" bindtap="editBabyInfo">
+      <image class="avatar" src="{{babyInfo.avatar || ''}}" mode="aspectFill"></image>
+      <view class="edit-avatar-btn">
+        <text class="icon">📷</text>
+      </view>
+    </view>
+    <view class="baby-name">{{babyInfo.nickname || '宝宝'}}</view>
+    <view class="baby-birthday" wx:if="{{babyInfo.birthday}}">
+      <text class="icon">🎂</text>
+      <text>出生日期：{{babyInfo.birthday}}</text>
+    </view>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="statistics card">
+    <view class="statistics-title">
+      <text class="icon">📊</text>
+      <text>数据统计</text>
+    </view>
+    <view class="statistics-grid">
+      <view class="stat-item">
+        <text class="stat-value">{{statistics.totalDays}}</text>
+        <text class="stat-label">记录天数</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{statistics.totalPhotos}}</text>
+        <text class="stat-label">照片</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{statistics.totalVideos}}</text>
+        <text class="stat-label">视频</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{statistics.consecutiveDays}}</text>
+        <text class="stat-label">连续记录</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关注宝宝列表 -->
+  <view class="followed-babies card" wx:if="{{followedBabies.length > 0}}">
+    <view class="followed-title">
+      <text class="icon">🤱</text>
+      <text>关注的宝宝</text>
+    </view>
+    <view class="followed-list">
+      <view class="followed-item" wx:for="{{followedBabies}}" wx:key="babyId" bindtap="viewBabyRecords" data-baby-id="{{item.babyId}}" data-baby-name="{{item.nickname}}">
+        <view class="followed-avatar-container">
+          <image class="followed-avatar" src="{{item.avatar || ''}}" mode="aspectFill"></image>
+        </view>
+        <view class="followed-info">
+          <view class="followed-name">{{item.nickname}}</view>
+          <view class="followed-age" wx:if="{{item.birthday}}">
+            {{item.age}}岁 {{item.month}}个月
+          </view>
+          <view class="followed-time">
+            <text class="icon">❤️</text>
+            <text>关注于 {{item.followTimeFormat}}</text>
+          </view>
+        </view>
+        <text class="followed-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 设置列表 -->
+  <view class="settings-list card">
+    <view class="settings-title">
+      <text class="icon">⚙️</text>
+      <text>设置</text>
+    </view>
+    <view class="setting-item" bindtap="editBabyInfo">
+      <view class="setting-left">
+        <text class="setting-icon">👶</text>
+        <text class="setting-text">宝宝信息</text>
+      </view>
+      <text class="setting-arrow">›</text>
+    </view>
+    <view class="divider"></view>
+    <view class="setting-item" bindtap="showAbout">
+      <view class="setting-left">
+        <text class="setting-icon">ℹ️</text>
+        <text class="setting-text">关于我们</text>
+      </view>
+      <text class="setting-arrow">›</text>
+    </view>
+  </view>
+</view>
+

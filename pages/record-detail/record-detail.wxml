@@ -1,0 +1,66 @@
+<!--pages/record-detail/record-detail.wxml-->
+<view class="container">
+  <!-- 照片轮播 -->
+  <view class="section card" wx:if="{{record.photos && record.photos.length > 0}}">
+    <swiper 
+      class="photo-swiper" 
+      indicator-dots="{{record.photos.length > 1}}"
+      indicator-color="rgba(255,255,255,0.5)"
+      indicator-active-color="#FF6B9D"
+      autoplay="false"
+      circular="true"
+    >
+      <swiper-item wx:for="{{record.photos}}" wx:key="index">
+        <image class="photo" src="{{item}}" mode="aspectFit" bindtap="previewPhoto" data-index="{{index}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 视频播放 -->
+  <view class="section card" wx:if="{{record.video}}">
+    <video 
+      class="video" 
+      src="{{record.video}}" 
+      controls
+      show-center-play-btn
+      enable-play-gesture
+    ></video>
+  </view>
+
+  <!-- 文字内容 -->
+  <view class="section card" wx:if="{{record.text}}">
+    <view class="text-content">{{record.text}}</view>
+  </view>
+
+  <!-- 标签 -->
+  <view class="section card" wx:if="{{record.tags && record.tags.length > 0}}">
+    <view class="tags-container">
+      <view class="tag" wx:for="{{record.tags}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 时间信息 -->
+  <view class="section card">
+    <view class="time-info">
+      <text class="icon">📅</text>
+      <text>{{dateTimeText}}</text>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions-container safe-area-bottom">
+    <button class="action-btn btn-secondary" bindtap="shareRecord">
+      <text class="icon">📤</text>
+      <text>分享</text>
+    </button>
+    <button class="action-btn btn-secondary" bindtap="editRecord">
+      <text class="icon">✏️</text>
+      <text>编辑</text>
+    </button>
+    <button class="action-btn btn-danger" bindtap="deleteRecord">
+      <text class="icon">🗑️</text>
+      <text>删除</text>
+    </button>
+  </view>
+</view>
+

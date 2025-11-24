@@ -1,0 +1,85 @@
+/* pages/record-detail/record-detail.wxss */
+.container {
+  padding-bottom: 200rpx; /* 增加底部内边距，避免内容被底部按钮覆盖 */
+}
+
+.section {
+  margin-top: 0;
+}
+
+.photo-swiper {
+  width: 100%;
+  height: 600rpx;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  width: 100%;
+  height: 400rpx;
+}
+
+.text-content {
+  font-size: 32rpx;
+  line-height: 1.8;
+  color: #333333;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.time-info {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.time-info .icon {
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+
+.actions-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 16rpx;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  font-size: 28rpx;
+}
+
+.action-btn .icon {
+  font-size: 28rpx;
+}
+
+.btn-danger {
+  background-color: #FF4D4F;
+  color: #FFFFFF;
+  border: none;
+}
+
+.btn-danger:active {
+  opacity: 0.8;
+}
+

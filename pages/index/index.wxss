@@ -1,0 +1,207 @@
+/* pages/index/index.wxss */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx;
+  background-color: #FF6B9D;
+  color: #FFFFFF;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.settings-btn {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-btn .icon {
+  font-size: 40rpx;
+}
+
+.calendar-card {
+  margin-top: 0;
+}
+
+.month-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32rpx;
+}
+
+.month-text {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+.month-btn {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #F0F0F0;
+}
+
+.month-btn .icon {
+  font-size: 48rpx;
+  color: #666666;
+}
+
+.month-btn:active {
+  background-color: #E0E0E0;
+}
+
+.weekdays {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+.weekday {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+  padding: 16rpx 0;
+}
+
+.days-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.day-item {
+  width: calc(100% / 7);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 8rpx;
+  margin-bottom: 8rpx;
+  box-sizing: border-box;
+  padding: 0 4rpx;
+}
+
+.day-item.other-month {
+  opacity: 0.3;
+}
+
+.day-item.today {
+  background-color: #FFF0F5;
+  border: 2rpx solid #FF6B9D;
+}
+
+.day-item.has-record .day-number {
+  color: #FF6B9D;
+  font-weight: 600;
+}
+
+.day-number {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.record-dot {
+  width: 12rpx;
+  height: 12rpx;
+  background-color: #FF6B9D;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8rpx;
+}
+
+.today-btn {
+  margin-top: 24rpx;
+  text-align: center;
+  padding: 16rpx;
+  color: #FF6B9D;
+  font-size: 28rpx;
+}
+
+.today-info {
+  margin-top: 0;
+  margin-bottom: 180rpx; /* 添加底部间距，确保不被底部按钮遮挡 */
+}
+
+.today-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.today-header .icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+
+.today-text {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.today-records {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.record-count {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.empty-tip {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.view-records-btn {
+  padding: 12rpx 24rpx;
+  background-color: #FFF0F5;
+  color: #FF6B9D;
+  border-radius: 24rpx;
+  font-size: 24rpx;
+}
+
+.add-btn-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.add-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  position: relative;
+  z-index: 101;
+}
+
+.add-btn .icon {
+  font-size: 32rpx;
+}
+
+.btn-hover {
+  opacity: 0.8;
+}
+

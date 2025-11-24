@@ -1,0 +1,78 @@
+/* pages/baby-info/baby-info.wxss */
+.section {
+  margin-top: 0;
+}
+
+.input {
+  height: 96rpx;
+  padding: 24rpx;
+  background-color: #F8F8F8;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 24rpx;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24rpx;
+}
+
+.avatar {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  border: 4rpx solid #FF6B9D;
+}
+
+.change-avatar-btn {
+  padding: 16rpx 32rpx;
+  background-color: #FFF0F5;
+  color: #FF6B9D;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx;
+  background-color: #F8F8F8;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  color: #333333;
+}
+
+.picker .placeholder {
+  color: #999999;
+}
+
+.picker .arrow {
+  font-size: 32rpx;
+  color: #CCCCCC;
+}
+
+.save-btn-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32rpx;
+  background-color: #FFFFFF;
+  box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.save-btn {
+  width: 100%;
+}
+

@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/followed-record-list/followed-record-list",
+    "pages/add-record/add-record",
+    "pages/record-detail/record-detail",
+    "pages/record-list/record-list",
+    "pages/follow/follow",
+    "pages/profile/profile",
+    "pages/baby-info/baby-info"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF6B9D",
+    "navigationBarTitleText": "成长时光盒",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#FF6B9D",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "日历",
+        "iconPath": "images/tabbar/calendar_normal.png",
+        "selectedIconPath": "images/tabbar/calendar_active.png"
+      },
+      {
+        "pagePath": "pages/record-list/record-list",
+        "text": "记录",
+        "iconPath": "images/tabbar/record_normal.png",
+        "selectedIconPath": "images/tabbar/record_active.png"
+      },
+      {
+        "pagePath": "pages/follow/follow",
+        "text": "关注",
+        "iconPath": "images/tabbar/follow_normal.png",
+        "selectedIconPath": "images/tabbar/follow_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabbar/profile_normal.png",
+        "selectedIconPath": "images/tabbar/profile_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
+

@@ -1,0 +1,89 @@
+<!-- pages/follow/follow.wxml -->
+<view class="container">
+  <view class="search-box">
+    <view class="search-input-wrapper">
+      <icon type="search" size="16" color="#999"></icon>
+      <input 
+        type="text" 
+        placeholder="搜索宝宝名称" 
+        value="{{keyword}}" 
+        bindinput="onSearchInput"
+        bindconfirm="onSearchConfirm"
+        class="search-input"
+      />
+      <view class="clear-btn" wx:if="{{keyword}}" bindtap="onClearSearch">✕</view>
+    </view>
+    <button class="search-btn" type="primary" bindtap="onSearchConfirm">搜索</button>
+  </view>
+  
+  <!-- 搜索结果 -->
+  <view class="search-results" wx:if="{{hasSearched}}">
+    <view wx:if="{{searchResults.length > 0}}" class="baby-list">
+      <view wx:for="{{searchResults}}" wx:key="_id" class="baby-item">
+        <view class="baby-avatar-container">
+          <image class="baby-avatar" src="{{item.avatar || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+        </view>
+        <view class="baby-info">
+          <view class="baby-name">{{item.nickname || '未命名'}}</view>
+          <view class="baby-details">
+            <text wx:if="{{item.age !== '未知'}}">{{item.age}}岁</text>
+            <text wx:else>年龄未知</text>
+          </view>
+          <view class="baby-birthday" wx:if="{{item.birthDate}}">
+            出生日期: {{item.birthDate}}
+          </view>
+          <!-- <view wx:if="{{item.babyId}}" class="baby-id">
+            ID: {{item.babyId}}
+          </view> -->
+        </view>
+        <button class="follow-btn" bindtap="onFollowTap" data-baby="{{item}}">关注</button>
+      </view>
+    </view>
+    <view wx:else class="empty-result">
+      <text>未找到匹配的宝宝</text>
+    </view>
+  </view>
+  
+  <!-- 未搜索时的提示 -->
+  <view class="no-search-tip" wx:if="{{!hasSearched}}">
+    <text>请输入宝宝名称进行搜索</text>
+  </view>
+  
+  <!-- 已关注的宝宝列表 -->
+  <view class="followed-section">
+    <view class="section-title">已关注的宝宝</view>
+    
+    <!-- 只有在加载时显示加载提示 -->
+    <view wx:if="{{loadingFollowed}}" class="loading-tip">
+      <text>加载中...</text>
+    </view>
+    
+    <!-- 加载完成后才显示内容 -->
+    <view wx:else>
+      <!-- 有数据时显示宝宝列表 -->
+      <view wx:if="{{followedBabies.length > 0}}" class="baby-list">
+        <view wx:for="{{followedBabies}}" wx:key="_id" class="baby-item" bindtap="onBabyItemTap" data-baby="{{item}}">
+          <view class="baby-avatar-container">
+            <image class="baby-avatar" src="{{item.avatar || '/images/default-avatar.png'}}" mode="aspectFill"></image>
+          </view>
+          <view class="baby-info">
+            <view class="baby-name">{{item.nickname || '未命名'}}</view>
+            <view class="baby-details">
+              <text wx:if="{{item.age !== '未知'}}">{{item.age}}岁</text>
+              <text wx:else>年龄未知</text>
+            </view>
+            <view class="baby-birthday" wx:if="{{item.birthDate}}">
+              出生日期: {{item.birthDate}}
+            </view>
+          </view>
+          <button class="follow-btn followed" type="default" catchtap="onUnfollowTap" data-baby-id="{{item._id}}">已关注</button>
+        </view>
+      </view>
+      
+      <!-- 无数据时显示空状态 -->
+      <view wx:else class="empty-result">
+        <text>您还没有关注任何宝宝</text>
+      </view>
+    </view>
+  </view>
+</view>

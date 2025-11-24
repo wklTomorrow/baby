@@ -1,0 +1,157 @@
+/* pages/followed-record-list/followed-record-list.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #F8F8F8;
+}
+
+.filter-container {
+  display: flex;
+  padding: 24rpx 32rpx;
+  background-color: #FFFFFF;
+  gap: 16rpx;
+  border-bottom: 2rpx solid #F0F0F0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.filter-tag {
+  padding: 12rpx 24rpx;
+  background-color: #F0F0F0;
+  color: #666666;
+  border-radius: 24rpx;
+  font-size: 28rpx;
+}
+
+.filter-tag.active {
+  background-color: #FF6B9D;
+  color: #FFFFFF;
+}
+
+.records-list {
+  padding: 32rpx 0;
+}
+
+.date-group {
+  margin-bottom: 48rpx;
+}
+
+.date-header {
+  display: flex;
+  align-items: center;
+  padding: 0 32rpx 16rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+.date-header .icon {
+  font-size: 32rpx;
+  margin-right: 16rpx;
+}
+
+.record-item {
+  margin: 0 32rpx 24rpx;
+  display: flex;
+  align-items: flex-start;
+  gap: 24rpx;
+  background-color: #FFFFFF;
+  padding: 24rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.record-thumbnail {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+}
+
+.record-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.record-text {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.record-meta {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.time {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.record-tags {
+  display: flex;
+  gap: 8rpx;
+  flex-wrap: wrap;
+}
+
+.record-tags .tag {
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  background-color: #F0F0F0;
+  color: #666666;
+  border-radius: 12rpx;
+}
+
+.record-type-icon {
+  font-size: 32rpx;
+  flex-shrink: 0;
+}
+
+/* 加载状态 */
+.loading {
+  padding: 64rpx 0;
+  text-align: center;
+  color: #999999;
+  font-size: 30rpx;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.empty-state-icon {
+  font-size: 120rpx;
+  margin-bottom: 32rpx;
+}
+
+.empty-state-text {
+  font-size: 32rpx;
+  color: #999999;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  padding: 24rpx;
+}
